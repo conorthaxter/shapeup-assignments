@@ -1,0 +1,129 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body - fluid, no border */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+/* All links bold */
+a {
+    font-weight: bold;
+}
+
+/* h1 font size */
+h1 {
+    font-size: 2.5vw;
+}
+
+/* Header - gradient white to lightsteelblue, steelblue border below */
+header {
+    background: linear-gradient(to bottom, white, lightsteelblue);
+    border-bottom: 2px solid steelblue;
+    padding: 15px;
+    overflow: hidden;
+}
+
+/* Header headings */
+header h1 {
+    font-size: 2.5vw;
+    color: steelblue;
+    font-style: italic;
+}
+
+header h2 {
+    font-size: 1.3vw;
+}
+
+/* Header image - scalable, min 100px, max 120px */
+header img {
+    float: left;
+    margin-right: 20px;
+    width: clamp(100px, 10vw, 120px);
+}
+
+/* Main - flexbox 2-column layout */
+main {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+/* Section - takes remaining space */
+section {
+    flex: 1;
+    padding-right: 15px;
+}
+
+/* Section links - maroon visited/unvisited, steelblue on hover/focus */
+section a:link,
+section a:visited {
+    color: maroon;
+}
+
+section a:hover,
+section a:focus {
+    color: steelblue;
+}
+
+/* Aside - fixed width, rounded steelblue border */
+aside {
+    width: 220px;
+    flex-shrink: 0;
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0 0 15px 15px;
+}
+
+/* Aside heading */
+aside h2 {
+    color: maroon;
+    margin-bottom: 10px;
+}
+
+/* Aside list */
+aside ul {
+    line-height: 1.5;
+    padding-left: 20px;
+}
+
+/* Aside links - steelblue visited/unvisited, maroon on hover/focus */
+aside a:link,
+aside a:visited {
+    color: steelblue;
+}
+
+aside a:hover,
+aside a:focus {
+    color: maroon;
+}
+
+section p {
+    margin: 10px 0;
+}
+
+section h2,
+section h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+blockquote {
+    margin: 10px 20px;
+    font-style: italic;
+}
+
+/* Footer - steelblue background, white text */
+footer {
+    font-size: 0.8vw;
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+    padding: 10px;
+}
