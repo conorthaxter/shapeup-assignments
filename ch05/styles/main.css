@@ -5,13 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Body - 700px wide, centered, steelblue border with black shadow */
+/* Body - fluid, no border */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    width: 700px;
-    margin: 20px auto;
-    border: 2px solid steelblue;
-    box-shadow: 5px 5px 10px black;
+    width: 100%;
 }
 
 /* All links bold */
@@ -21,7 +18,7 @@ a {
 
 /* h1 font size */
 h1 {
-    font-size: 2.5em;
+    font-size: 2.5vw;
 }
 
 /* Header - gradient white to lightsteelblue, steelblue border below */
@@ -29,23 +26,86 @@ header {
     background: linear-gradient(to bottom, white, lightsteelblue);
     border-bottom: 2px solid steelblue;
     padding: 15px;
+    overflow: hidden;
 }
 
 /* Header headings */
 header h1 {
-    font-size: 2.5em;
+    font-size: 2.5vw;
     color: steelblue;
     font-style: italic;
 }
 
 header h2 {
-    font-size: 1.3em;
+    font-size: 1.3vw;
 }
 
-/* Header image */
+/* Header image - scalable, min 100px, max 120px */
 header img {
     float: left;
     margin-right: 20px;
+    width: clamp(100px, 10vw, 120px);
+}
+
+/* Navigation bar */
+nav {
+    background-color: steelblue;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Current page - rounded white border */
+nav ul li.current > a {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Dropdown submenu */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: steelblue;
+    min-width: 180px;
+    z-index: 100;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* Main - flexbox 2-column layout */
+main {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+/* Section - takes remaining space */
+section {
+    flex: 1;
+    padding-right: 15px;
 }
 
 /* Section links - maroon visited/unvisited, steelblue on hover/focus */
@@ -59,12 +119,14 @@ section a:focus {
     color: steelblue;
 }
 
-/* Aside - rounded steelblue border */
+/* Aside - fixed width, rounded steelblue border */
 aside {
+    width: 220px;
+    flex-shrink: 0;
     border: 2px solid steelblue;
     border-radius: 10px;
     padding: 15px;
-    margin: 15px;
+    margin: 0 0 15px 15px;
 }
 
 /* Aside heading */
@@ -90,11 +152,6 @@ aside a:focus {
     color: maroon;
 }
 
-/* Main content padding */
-main {
-    padding: 15px;
-}
-
 section p {
     margin: 10px 0;
 }
@@ -112,7 +169,7 @@ blockquote {
 
 /* Footer - steelblue background, white text */
 footer {
-    font-size: 0.8em;
+    font-size: 0.8vw;
     text-align: center;
     background-color: steelblue;
     color: white;
