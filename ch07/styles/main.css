@@ -1,0 +1,226 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body - mobile first, full width */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+/* All links bold */
+a {
+    font-weight: bold;
+}
+
+/* Header - gradient white to lightsteelblue, steelblue border below */
+header {
+    background: linear-gradient(to bottom, white, lightsteelblue);
+    border-bottom: 2px solid steelblue;
+    padding: 15px;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: steelblue;
+    font-style: italic;
+}
+
+header h2 {
+    font-size: 1em;
+}
+
+header img {
+    float: left;
+    margin-right: 15px;
+    width: 80px;
+}
+
+/* Navigation - mobile: vertical stacked list */
+nav {
+    background-color: steelblue;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Current page - rounded white border */
+nav ul li.current > a {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Mobile: submenus always visible and indented */
+nav ul ul {
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+nav ul ul li a {
+    padding-left: 30px;
+}
+
+/* Main - mobile: block layout, aside stacks below section */
+main {
+    display: block;
+    padding: 15px;
+}
+
+section {
+    padding-bottom: 15px;
+}
+
+/* Section links - maroon visited/unvisited, steelblue on hover/focus */
+section a:link,
+section a:visited {
+    color: maroon;
+}
+
+section a:hover,
+section a:focus {
+    color: steelblue;
+}
+
+/* Aside - rounded steelblue border */
+aside {
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+aside h2 {
+    color: maroon;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    line-height: 1.5;
+}
+
+aside a:link,
+aside a:visited {
+    color: steelblue;
+}
+
+aside a:hover,
+aside a:focus {
+    color: maroon;
+}
+
+section p {
+    margin: 10px 0;
+}
+
+section h2,
+section h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+blockquote {
+    margin: 10px 20px;
+    font-style: italic;
+}
+
+/* Footer - steelblue background, white text */
+footer {
+    font-size: 0.85em;
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+    padding: 10px;
+}
+
+/* --- Media query: horizontal nav at 600px+ --- */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+    }
+
+    /* Submenus become absolute dropdowns */
+    nav ul ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: steelblue;
+        min-width: 180px;
+        z-index: 100;
+        flex-direction: column;
+    }
+
+    nav ul li:hover > ul {
+        display: flex;
+    }
+
+    nav ul ul li a {
+        padding-left: 15px;
+    }
+}
+
+/* --- Media query: side-by-side layout at 800px+ --- */
+@media (min-width: 800px) {
+    header h1 {
+        font-size: 2.5vw;
+    }
+
+    header h2 {
+        font-size: 1.3vw;
+    }
+
+    header img {
+        width: clamp(100px, 10vw, 120px);
+    }
+
+    main {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    section {
+        flex: 1;
+        padding-right: 15px;
+        padding-bottom: 0;
+    }
+
+    aside {
+        width: 220px;
+        flex-shrink: 0;
+        margin: 0 0 15px 15px;
+    }
+
+    footer {
+        font-size: 0.8vw;
+    }
+}
