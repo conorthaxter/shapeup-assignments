@@ -1,0 +1,27 @@
+/* Meditation page - video and audio adjustments */
+
+figure video {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+}
+
+figure {
+    margin: 15px 0;
+}
+
+.audio-list p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.audio-list span {
+    min-width: 180px;
+    font-weight: bold;
+}
+
+audio {
+    flex: 1;
+}
