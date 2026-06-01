@@ -1,0 +1,48 @@
+/* Calorie Counter table - large screens */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.95em;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #bbb;
+}
+
+thead tr {
+    background-color: steelblue;
+    color: white;
+}
+
+.category {
+    font-weight: bold;
+    background-color: lightsteelblue;
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) td:not(.category) {
+    background-color: #f0f8ff;
+}
+
+/* Small screens - scrollable table with column labels */
+@media (max-width: 600px) {
+    table {
+        min-width: 360px;
+        font-size: 0.85em;
+    }
+
+    th, td {
+        padding: 6px 8px;
+    }
+
+    .category {
+        font-size: 0.8em;
+    }
+}
